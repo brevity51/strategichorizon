@@ -1,0 +1,193 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Master Business Development</h1>
+                <p class="lead mb-4">Get our exclusive 3-part ebook series that will transform your approach to business growth and client acquisition.</p>
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-star me-1 text-warning"></i>
+                    <i class="fas fa-star me-1 text-warning"></i>
+                    <i class="fas fa-star me-1 text-warning"></i>
+                    <i class="fas fa-star me-1 text-warning"></i>
+                    <i class="fas fa-star me-1 text-warning"></i>
+                    <span class="ms-2">Rated 4.9/5 by 2,500+ professionals</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-container">
+                    <h3 class="text-center mb-4">Get Your Free Ebooks</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.first_name }}
+                                {% if form.first_name.errors %}
+                                    <div class="text-danger small">{{ form.first_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.last_name }}
+                                {% if form.last_name.errors %}
+                                    <div class="text-danger small">{{ form.last_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="text-danger small">{{ form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.company }}
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Get My Free Ebooks</button>
+                        <p class="small text-muted text-center mt-3">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2>What You'll Learn</h2>
+                <p class="lead">Our 3-part ebook series covers everything from strategy to execution</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h4>Strategic Planning</h4>
+                    <p>Learn how to create a business development strategy that aligns with your company's goals and resources.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Relationship Building</h4>
+                    <p>Master the art of building lasting business relationships that lead to consistent growth.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Growth Metrics</h4>
+                    <p>Understand which metrics matter most and how to track your business development success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ebook Preview Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-center">
+                <img src="https://via.placeholder.com/300x400/667eea/ffffff?text=Ebook+Cover" alt="Business Development Mastery" class="ebook-cover">
+            </div>
+            <div class="col-lg-8">
+                <h2>About the Ebooks</h2>
+                <p class="lead">Our comprehensive guide to business development mastery</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 150+ pages of actionable content</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Real-world case studies and examples</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Templates and worksheets you can use immediately</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Expert insights from industry leaders</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Updated quarterly with the latest trends</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2>What Our Readers Say</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"These ebooks completely transformed our approach to business development. We've seen a 40% increase in qualified leads since implementing the strategies."</p>
+                        <footer class="blockquote-footer mt-3">Sarah Johnson, <cite title="Source Title">Growth Director</cite></footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"The relationship-building section alone was worth the subscription. I've forged partnerships that I never thought possible before reading this."</p>
+                        <footer class="blockquote-footer mt-3">Michael Chen, <cite title="Source Title">Business Development Manager</cite></footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"As a startup founder, these ebooks provided the framework we needed to scale our business development efforts effectively and efficiently."</p>
+                        <footer class="blockquote-footer mt-3">Jessica Williams, <cite title="Source Title">CEO & Founder</cite></footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to Transform Your Business Development Strategy?</h2>
+        <p class="lead mb-4">Join thousands of professionals who have already downloaded our free ebook series.</p>
+        <a href="#form" class="btn btn-light btn-lg px-5">Get Your Free Ebooks Now</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2023 Business Development Mastery. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %}
